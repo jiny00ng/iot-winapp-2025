@@ -31,13 +31,13 @@
             LdlName = new Label();
             TxtName = new TextBox();
             LblAge = new Label();
-            TxtAge = new TextBox();
             LblGender = new Label();
             RdoMale = new RadioButton();
             RdoFemale = new RadioButton();
             BtnMsg = new Button();
             LblResult = new Label();
             TxtResult = new TextBox();
+            TxtAge = new MaskedTextBox();
             SuspendLayout();
             // 
             // LdlName
@@ -45,15 +45,15 @@
             LdlName.AutoSize = true;
             LdlName.Location = new Point(12, 20);
             LdlName.Name = "LdlName";
-            LdlName.Size = new Size(62, 15);
+            LdlName.Size = new Size(66, 15);
             LdlName.TabIndex = 0;
-            LdlName.Text = "이름입력: ";
+            LdlName.Text = "이름입력 : ";
             // 
             // TxtName
             // 
             TxtName.Location = new Point(80, 12);
             TxtName.Name = "TxtName";
-            TxtName.Size = new Size(223, 23);
+            TxtName.Size = new Size(170, 23);
             TxtName.TabIndex = 1;
             // 
             // LblAge
@@ -61,25 +61,18 @@
             LblAge.AutoSize = true;
             LblAge.Location = new Point(12, 44);
             LblAge.Name = "LblAge";
-            LblAge.Size = new Size(62, 15);
+            LblAge.Size = new Size(66, 15);
             LblAge.TabIndex = 0;
-            LblAge.Text = "나이입력: ";
-            // 
-            // TxtAge
-            // 
-            TxtAge.Location = new Point(80, 41);
-            TxtAge.Name = "TxtAge";
-            TxtAge.Size = new Size(223, 23);
-            TxtAge.TabIndex = 2;
+            LblAge.Text = "생년월일 : ";
             // 
             // LblGender
             // 
             LblGender.AutoSize = true;
             LblGender.Location = new Point(12, 73);
             LblGender.Name = "LblGender";
-            LblGender.Size = new Size(62, 15);
+            LblGender.Size = new Size(70, 15);
             LblGender.TabIndex = 0;
-            LblGender.Text = "성별입력: ";
+            LblGender.Text = "성별입력 :  ";
             // 
             // RdoMale
             // 
@@ -129,18 +122,26 @@
             TxtResult.Size = new Size(492, 23);
             TxtResult.TabIndex = 5;
             // 
+            // TxtAge
+            // 
+            TxtAge.Location = new Point(80, 41);
+            TxtAge.Mask = "0000-00-00";
+            TxtAge.Name = "TxtAge";
+            TxtAge.Size = new Size(170, 23);
+            TxtAge.TabIndex = 2;
+            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(584, 361);
+            Controls.Add(TxtAge);
             Controls.Add(BtnMsg);
             Controls.Add(RdoFemale);
             Controls.Add(RdoMale);
             Controls.Add(LblGender);
             Controls.Add(TxtResult);
             Controls.Add(LblResult);
-            Controls.Add(TxtAge);
             Controls.Add(LblAge);
             Controls.Add(TxtName);
             Controls.Add(LdlName);
@@ -157,12 +158,12 @@
         private Label LdlName;
         private TextBox TxtName;
         private Label LblAge;
-        private TextBox TxtAge;
         private Label LblGender;
         private RadioButton RdoMale;
         private RadioButton RdoFemale;
         private Button BtnMsg;
         private Label LblResult;
         private TextBox TxtResult;
+        private MaskedTextBox TxtAge;
     }
 }
