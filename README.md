@@ -474,7 +474,9 @@ IoT 개발자 C#/WinApp 리포지토리 2025
          - 모든 예외의 부모클래스는 Exception 클래스
          - 예외클래스를 모르겠다 싶으면 Exception으로 처리
 
-         <img src="./image/cs0007.png" width="600">
+        <img src="./image/cs0007.png" width="600">
+
+       https://github.com/user-attachments/assets/1fcc5812-76b1-4e86-bfc8-4c939e558a5a
     
     2. 컬렉션 - [소스](./day04/Day04Study/SyntaxWinApp02/FrmMain.cs)
         - 배열, 리스트, 딕셔너리, 큐, 스택 등 여러 데이터를 저장하고 다루는 구조를 가진 객체를 통칭
