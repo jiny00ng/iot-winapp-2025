@@ -83,7 +83,7 @@
             // 
             // BtnRed
             // 
-            BtnRed.BackColor = SystemColors.ControlLight;
+            BtnRed.BackColor = Color.FromArgb(255, 192, 192);
             BtnRed.FlatAppearance.BorderColor = Color.Black;
             BtnRed.Font = new Font("맑은 고딕", 9F, FontStyle.Bold);
             BtnRed.ForeColor = Color.Red;
@@ -91,7 +91,7 @@
             BtnRed.Name = "BtnRed";
             BtnRed.Size = new Size(30, 30);
             BtnRed.TabIndex = 2;
-            BtnRed.Text = "R";
+            BtnRed.Text = "C";
             BtnRed.UseVisualStyleBackColor = false;
             BtnRed.Click += BtnRed_Click;
             // 
