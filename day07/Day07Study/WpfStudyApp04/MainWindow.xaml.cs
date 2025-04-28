@@ -47,7 +47,7 @@ namespace WpfStudyApp04
             // CboCollection ComboBox에 fruitItems을 데이터 바인딩
             // 윈앱의 컨트롤.DataSource와 동일한 속성
             //CboCollection.DataContext = fruits;
-            CboCollection.ItemsSource = fruitItems;
+            CboFruits.ItemsSource = fruitItems;
 
             LoadDivsionFromDatabase();
 
@@ -63,7 +63,7 @@ namespace WpfStudyApp04
         {
             // DB연결 문자열(DB연결 정보)
             string connectionString = "Server=localhost;Database=bookrentalshop;Uid=root;Pwd=12345;Charset=utf8;";
-            string query = "SELECT division, names, FROM divtbl";   // 언어에서 쿼리 작성시 ; 사용 안됨
+            string query = "SELECT division, names FROM divtbl";   // 언어에서 쿼리 작성시 ; 사용 안됨
 
             List<KeyValuePair<string, string>> divisions = new List<KeyValuePair<string, string>>();
 
