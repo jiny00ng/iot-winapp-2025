@@ -1,4 +1,4 @@
-namespace MyWinFormApp
+namespace MyWinFormsApp
 {
     public partial class Form1 : Form
     {
