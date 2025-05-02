@@ -22,7 +22,35 @@ namespace MyWinFormsApp
             // 이벤트 핸들러 연결
             DtpSchedule.ValueChanged += DtpSchedule_ValueChanged;  // DateTimePicker 값 변경 시 호출될 이벤트 핸들러
             MnuExit.Click += MnuExit_Click;  // Exit 메뉴 클릭 시 호출될 이벤트 핸들러
+            this.FormClosing += FrmMain_FormClosing; // 폼 종료 시 호출될 이벤트 핸들러
         }
+
+        private void DtpSchedule_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime selectedDate = DtpSchedule.Value.Date;  // 선택된 날짜 가져오기
+            TxtDay.Text = selectedDate.ToString("yyyy-MM-dd");  // 날짜 표시
+
+            // 선택된 날짜의 일정 표시
+            if (schedules.ContainsKey(selectedDate))
+            {
+                TxtInput.Text = schedules[selectedDate];  // 일정 표시
+            }
+            else
+            {
+                TxtInput.Text = "";  // 일정이 없으면 텍스트 박스 비우기
+            }
+
+            // 선택된 날짜의 이미지 표시
+            if (images.ContainsKey(selectedDate))
+            {
+                PicImage.Image = images[selectedDate];  // 해당 날짜에 저장된 이미지 표시
+            }
+            else
+            {
+                PicImage.Image = null;  // 이미지가 없으면 비워두기
+            }
+        }
+
 
         // 이미지 열기
         private void BtnOpenImage_Click(object sender, EventArgs e)
@@ -130,7 +158,7 @@ namespace MyWinFormsApp
         }
 
         // 폼 종료 시 확인
-        private void FrmMain_FormClosing(object? sender, FormClosingEventArgs e)
+        private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("종료하시겠습니까?", "종료여부",
                                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
