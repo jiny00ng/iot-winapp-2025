@@ -1068,4 +1068,10 @@ IoT 개발자 C#/WinApp 리포지토리 2025
         
 ## 10일차
 
-### 코딩테스트
+### 코딩테스트 - 윈앱(윈폼)
+- 일정 관리 윈앱 - [소스](./toyproject/MyWinApp/MyWinFormsApp/FrmMain.cs)
+    - 주요기능 : 일정 입력 및 삭제, 이미지 선택 및 삭제, 전체 일정보기, 메뉴관리, 상태표시줄
+
+- 실행 화면
+
+    <img src="./image/cs0024.png" width="800">
