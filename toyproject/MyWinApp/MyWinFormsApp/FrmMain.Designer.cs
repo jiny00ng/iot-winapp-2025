@@ -43,23 +43,23 @@
             TxtAllSchedules = new TextBox();
             TxtDaySchedules = new TextBox();
             BtnViewAllSchedules = new Button();
+            BtnDeleteImage = new Button();
             BtnOpenImage = new Button();
             PicImage = new PictureBox();
             button1 = new Button();
-            statusStrip1 = new StatusStrip();
-            toolStripStatusLabel1 = new ToolStripStatusLabel();
             menuStrip1 = new MenuStrip();
             MnuFile = new ToolStripMenuItem();
             MnuNewFile = new ToolStripMenuItem();
             ctrlNToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem2 = new ToolStripSeparator();
+            저장SToolStripMenuItem = new ToolStripMenuItem();
+            ctrlSToolStripMenuItem = new ToolStripMenuItem();
             MnuExit = new ToolStripMenuItem();
             ctrlXToolStripMenuItem = new ToolStripMenuItem();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PicImage).BeginInit();
-            statusStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -149,6 +149,7 @@
             groupBox2.Controls.Add(TxtAllSchedules);
             groupBox2.Controls.Add(TxtDaySchedules);
             groupBox2.Controls.Add(BtnViewAllSchedules);
+            groupBox2.Controls.Add(BtnDeleteImage);
             groupBox2.Controls.Add(BtnOpenImage);
             groupBox2.Controls.Add(PicImage);
             groupBox2.Controls.Add(button1);
@@ -203,6 +204,16 @@
             BtnViewAllSchedules.UseVisualStyleBackColor = true;
             BtnViewAllSchedules.Click += BtnViewAllSchedules_Click;
             // 
+            // BtnDeleteImage
+            // 
+            BtnDeleteImage.Location = new Point(102, 264);
+            BtnDeleteImage.Name = "BtnDeleteImage";
+            BtnDeleteImage.Size = new Size(90, 25);
+            BtnDeleteImage.TabIndex = 3;
+            BtnDeleteImage.Text = "이미지 삭제";
+            BtnDeleteImage.UseVisualStyleBackColor = true;
+            BtnDeleteImage.Click += BtnDeleteImage_Click;
+            // 
             // BtnOpenImage
             // 
             BtnOpenImage.Location = new Point(6, 264);
@@ -231,22 +242,6 @@
             button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
             // 
-            // statusStrip1
-            // 
-            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
-            statusStrip1.Location = new Point(0, 539);
-            statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(1184, 22);
-            statusStrip1.SizingGrip = false;
-            statusStrip1.TabIndex = 1;
-            statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            toolStripStatusLabel1.Size = new Size(90, 17);
-            toolStripStatusLabel1.Text = "상태 : 일반상태";
-            // 
             // menuStrip1
             // 
             menuStrip1.Items.AddRange(new ToolStripItem[] { MnuFile });
@@ -258,7 +253,7 @@
             // 
             // MnuFile
             // 
-            MnuFile.DropDownItems.AddRange(new ToolStripItem[] { MnuNewFile, toolStripMenuItem2, MnuExit });
+            MnuFile.DropDownItems.AddRange(new ToolStripItem[] { MnuNewFile, toolStripMenuItem2, 저장SToolStripMenuItem, MnuExit });
             MnuFile.Name = "MnuFile";
             MnuFile.Size = new Size(57, 20);
             MnuFile.Text = "파일(&F)";
@@ -273,13 +268,27 @@
             // ctrlNToolStripMenuItem
             // 
             ctrlNToolStripMenuItem.Name = "ctrlNToolStripMenuItem";
-            ctrlNToolStripMenuItem.Size = new Size(118, 22);
-            ctrlNToolStripMenuItem.Text = "Ctrl + N";
+            ctrlNToolStripMenuItem.Size = new Size(110, 22);
+            ctrlNToolStripMenuItem.Text = "Ctrl+N";
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
             toolStripMenuItem2.Size = new Size(116, 6);
+            // 
+            // 저장SToolStripMenuItem
+            // 
+            저장SToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ctrlSToolStripMenuItem });
+            저장SToolStripMenuItem.Name = "저장SToolStripMenuItem";
+            저장SToolStripMenuItem.Size = new Size(119, 22);
+            저장SToolStripMenuItem.Text = "저장(&S)";
+            저장SToolStripMenuItem.Click += 저장SToolStripMenuItem_Click;
+            // 
+            // ctrlSToolStripMenuItem
+            // 
+            ctrlSToolStripMenuItem.Name = "ctrlSToolStripMenuItem";
+            ctrlSToolStripMenuItem.Size = new Size(112, 22);
+            ctrlSToolStripMenuItem.Text = " Ctrl+S";
             // 
             // MnuExit
             // 
@@ -292,8 +301,8 @@
             // ctrlXToolStripMenuItem
             // 
             ctrlXToolStripMenuItem.Name = "ctrlXToolStripMenuItem";
-            ctrlXToolStripMenuItem.Size = new Size(116, 22);
-            ctrlXToolStripMenuItem.Text = "Ctrl + X";
+            ctrlXToolStripMenuItem.Size = new Size(108, 22);
+            ctrlXToolStripMenuItem.Text = "Ctrl+X";
             // 
             // FrmMain
             // 
@@ -301,7 +310,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(1184, 561);
-            Controls.Add(statusStrip1);
             Controls.Add(menuStrip1);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
@@ -317,8 +325,6 @@
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)PicImage).EndInit();
-            statusStrip1.ResumeLayout(false);
-            statusStrip1.PerformLayout();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -343,8 +349,6 @@
         private TextBox TxtDay;
         private Button BtnViewAllSchedules;
         private Label label1;
-        private StatusStrip statusStrip1;
-        private ToolStripStatusLabel toolStripStatusLabel1;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem MnuFile;
         private ToolStripMenuItem MnuNewFile;
@@ -353,5 +357,8 @@
         private ToolStripMenuItem MnuExit;
         private ToolStripMenuItem ctrlXToolStripMenuItem;
         private TextBox TxtAllSchedules;
+        private Button BtnDeleteImage;
+        private ToolStripMenuItem 저장SToolStripMenuItem;
+        private ToolStripMenuItem ctrlSToolStripMenuItem;
     }
 }

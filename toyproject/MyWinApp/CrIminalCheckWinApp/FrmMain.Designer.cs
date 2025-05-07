@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            comboBox1 = new ComboBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            MtbBirth = new MaskedTextBox();
+            CmbGender = new ComboBox();
+            TxtName = new TextBox();
             BtnSearch = new Button();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             groupBox2 = new GroupBox();
-            pictureBox1 = new PictureBox();
+            textBox2 = new TextBox();
+            PicResult = new PictureBox();
             label4 = new Label();
             label8 = new Label();
             label7 = new Label();
@@ -48,15 +49,15 @@
             groupBox4 = new GroupBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PicResult).BeginInit();
             groupBox3.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(comboBox1);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(MtbBirth);
+            groupBox1.Controls.Add(CmbGender);
+            groupBox1.Controls.Add(TxtName);
             groupBox1.Controls.Add(BtnSearch);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
@@ -68,37 +69,39 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "검색";
             // 
-            // comboBox1
+            // MtbBirth
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "남성", "여성" });
-            comboBox1.Location = new Point(74, 45);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(147, 23);
-            comboBox1.TabIndex = 3;
+            MtbBirth.Location = new Point(74, 74);
+            MtbBirth.Mask = "000000";
+            MtbBirth.Name = "MtbBirth";
+            MtbBirth.Size = new Size(147, 23);
+            MtbBirth.TabIndex = 6;
             // 
-            // textBox2
+            // CmbGender
             // 
-            textBox2.Location = new Point(74, 74);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(147, 23);
-            textBox2.TabIndex = 2;
+            CmbGender.FormattingEnabled = true;
+            CmbGender.Items.AddRange(new object[] { "남성", "여성" });
+            CmbGender.Location = new Point(74, 45);
+            CmbGender.Name = "CmbGender";
+            CmbGender.Size = new Size(147, 23);
+            CmbGender.TabIndex = 2;
             // 
-            // textBox1
+            // TxtName
             // 
-            textBox1.Location = new Point(74, 16);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(147, 23);
-            textBox1.TabIndex = 2;
+            TxtName.Location = new Point(74, 16);
+            TxtName.Name = "TxtName";
+            TxtName.Size = new Size(147, 23);
+            TxtName.TabIndex = 1;
             // 
             // BtnSearch
             // 
             BtnSearch.Location = new Point(6, 103);
             BtnSearch.Name = "BtnSearch";
             BtnSearch.Size = new Size(215, 27);
-            BtnSearch.TabIndex = 1;
+            BtnSearch.TabIndex = 4;
             BtnSearch.Text = "검색";
             BtnSearch.UseVisualStyleBackColor = true;
+            BtnSearch.Click += BtnSearch_Click;
             // 
             // label3
             // 
@@ -129,7 +132,8 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(pictureBox1);
+            groupBox2.Controls.Add(textBox2);
+            groupBox2.Controls.Add(PicResult);
             groupBox2.Controls.Add(label4);
             groupBox2.Controls.Add(label8);
             groupBox2.Controls.Add(label7);
@@ -142,14 +146,22 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "개인정보";
             // 
-            // pictureBox1
+            // textBox2
             // 
-            pictureBox1.BackColor = SystemColors.ActiveBorder;
-            pictureBox1.Location = new Point(6, 16);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(120, 120);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            textBox2.Location = new Point(188, 16);
+            textBox2.Multiline = true;
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(133, 120);
+            textBox2.TabIndex = 1;
+            // 
+            // PicResult
+            // 
+            PicResult.BackColor = SystemColors.ActiveBorder;
+            PicResult.Location = new Point(6, 16);
+            PicResult.Name = "PicResult";
+            PicResult.Size = new Size(120, 120);
+            PicResult.TabIndex = 0;
+            PicResult.TabStop = false;
             // 
             // label4
             // 
@@ -211,7 +223,7 @@
             BtnNewRocord.Location = new Point(6, 117);
             BtnNewRocord.Name = "BtnNewRocord";
             BtnNewRocord.Size = new Size(215, 27);
-            BtnNewRocord.TabIndex = 1;
+            BtnNewRocord.TabIndex = 5;
             BtnNewRocord.Text = "신규 범죄 기록 추가";
             BtnNewRocord.UseVisualStyleBackColor = true;
             // 
@@ -236,12 +248,13 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "FrmMain";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "범죄 기록 확인";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PicResult).EndInit();
             groupBox3.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -250,15 +263,14 @@
 
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-        private TextBox textBox1;
+        private TextBox TxtName;
         private Button BtnSearch;
         private Label label2;
         private Label label1;
         private GroupBox groupBox3;
         private Label label3;
-        private ComboBox comboBox1;
-        private TextBox textBox2;
-        private PictureBox pictureBox1;
+        private ComboBox CmbGender;
+        private PictureBox PicResult;
         private Label label4;
         private Label label7;
         private Label label6;
@@ -266,5 +278,7 @@
         private GroupBox groupBox4;
         private Label label8;
         private Button BtnNewRocord;
+        private MaskedTextBox MtbBirth;
+        private TextBox textBox2;
     }
 }
