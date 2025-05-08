@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             groupBox1 = new GroupBox();
             label1 = new Label();
@@ -56,6 +57,7 @@
             ctrlSToolStripMenuItem = new ToolStripMenuItem();
             MnuExit = new ToolStripMenuItem();
             ctrlXToolStripMenuItem = new ToolStripMenuItem();
+            contextMenuStrip1 = new ContextMenuStrip(components);
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             groupBox2.SuspendLayout();
@@ -262,25 +264,25 @@
             // 
             MnuNewFile.DropDownItems.AddRange(new ToolStripItem[] { ctrlNToolStripMenuItem });
             MnuNewFile.Name = "MnuNewFile";
-            MnuNewFile.Size = new Size(119, 22);
+            MnuNewFile.Size = new Size(180, 22);
             MnuNewFile.Text = "새 글(&N)";
             // 
             // ctrlNToolStripMenuItem
             // 
             ctrlNToolStripMenuItem.Name = "ctrlNToolStripMenuItem";
-            ctrlNToolStripMenuItem.Size = new Size(110, 22);
+            ctrlNToolStripMenuItem.Size = new Size(180, 22);
             ctrlNToolStripMenuItem.Text = "Ctrl+N";
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(116, 6);
+            toolStripMenuItem2.Size = new Size(177, 6);
             // 
             // 저장SToolStripMenuItem
             // 
             저장SToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ctrlSToolStripMenuItem });
             저장SToolStripMenuItem.Name = "저장SToolStripMenuItem";
-            저장SToolStripMenuItem.Size = new Size(119, 22);
+            저장SToolStripMenuItem.Size = new Size(180, 22);
             저장SToolStripMenuItem.Text = "저장(&S)";
             저장SToolStripMenuItem.Click += 저장SToolStripMenuItem_Click;
             // 
@@ -294,7 +296,7 @@
             // 
             MnuExit.DropDownItems.AddRange(new ToolStripItem[] { ctrlXToolStripMenuItem });
             MnuExit.Name = "MnuExit";
-            MnuExit.Size = new Size(119, 22);
+            MnuExit.Size = new Size(180, 22);
             MnuExit.Text = "종료(&X)";
             MnuExit.Click += MnuExit_Click;
             // 
@@ -303,6 +305,11 @@
             ctrlXToolStripMenuItem.Name = "ctrlXToolStripMenuItem";
             ctrlXToolStripMenuItem.Size = new Size(108, 22);
             ctrlXToolStripMenuItem.Text = "Ctrl+X";
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(61, 4);
             // 
             // FrmMain
             // 
@@ -360,5 +367,6 @@
         private Button BtnDeleteImage;
         private ToolStripMenuItem 저장SToolStripMenuItem;
         private ToolStripMenuItem ctrlSToolStripMenuItem;
+        private ContextMenuStrip contextMenuStrip1;
     }
 }
